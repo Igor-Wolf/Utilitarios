@@ -24,11 +24,11 @@ pyinstaller --add-binary "ffmpeg.exe:." --onefile main.py
 
 Para poder utilizar o programa é necessário ter tanto o utilitarios.exe quanto o ffmpeg.exe na mesma pasta
 
-[Utilitários](https://github.com/Igor-Wolf/Utilitarios/blob/main/Execut%C3%A1vel.png?raw=true)
+![Executavel](https://github.com/Igor-Wolf/Utilitarios/blob/main/Execut%C3%A1vel.png?raw=true)
 
 Feito isso agora já será possivel realizar todas as operações que ele proporciona
 
-[Utilitários](https://github.com/Igor-Wolf/Utilitarios/blob/main/tela%20de%20inicio.png?raw=true)
+![Tela de Início](https://github.com/Igor-Wolf/Utilitarios/blob/main/tela%20de%20inicio.png?raw=true)
 
 Todas as operações feitas criarão arquivos na mesma raiz onde se encontram tanto o utilitarios.exe quanto ffmpeg.exe. Logo se escolher a função download de arquivos, por exemplo, o video.mp4 será criado nessa pasta.
 No que diz respeito às funcionalidades é possível dizer o seguinte:
