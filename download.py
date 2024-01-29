@@ -94,9 +94,6 @@ def downloadmanual():
             rename.renomear_arquivo(yt.title, nome)
 
             
-
-
-
         elif auxiliar=="3":
 
             yt = YouTube(input('Cole a URL do video: \n'))#inserir a URL do video
@@ -122,65 +119,6 @@ def downloadmanual():
         else:
             print("Valor Incorreto!")
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-        
-        # print("\n\n Listar Formatos progressivos, qualidade melhorada")
-
-        # for item in yt.streams.filter(progressive=True):
-        #     print(item)
-        #     print("\n\n")
                 
-
         
-                
-
-        
-
-                
-        # escolha = int(input("\n\nQual itag deseja baixar? "))
-
-
-        # if yt.streams.filter(type="video"):
-            
-        #     stream = yt.streams.get_by_itag(140)
-        #     print(stream)
-        #     stream.download()
-        #     conversor.converttoaudio(yt.title)
-
-        # stream = yt.streams.get_by_itag(escolha)
-        # print(stream)
-        # stream.download()
-
-
     
-
-
-#========================================================
-
-
-# if auxiliar == 1:
-#     conversor.converttoaudio(yt.title)
-# elif auxiliar == 2:
-#     cortar.cutvideo()
-# else:
-#     merge.juntarvideoeaudio(yt.title)
-
