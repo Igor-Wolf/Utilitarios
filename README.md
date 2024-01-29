@@ -5,7 +5,7 @@ Esse projeto tem como objetivo a elaboração de um programa que possui um conju
 
 Atualmente foram utilizadas diversas biliotecas do python como ffmpeg, pythube, dentre outras. Os autores de suas respectivas bibliotecas tiveram grande importância na elaboração deste programa. Em especial vale citar o software FFMPEG que possui licença GPU - General Public Licence e pode ser conferido [aqui](https://ffmpeg.org/).
 Não alterei códigos do ffmpeg apenas agreguei numa linguagem mais agradável para o usuário final poder realizar suas tarefas.
-Para futuras alterações no código, tentei acessar o ffmpeg pelo executavel ffmpeg.exe contido na raiz do código, mas devido ao tamanho não consegui upá-lo no Git-Hub. Logo caso queira alterar o código atual, será necessario acrescentar esse executável na minha pasta raiz e ao finalizar removê-lo quando gerar o executável python.
+Para futuras alterações no código, houve a tentativa de acessar o ffmpeg pelo executavel ffmpeg.exe contido na raiz do código, mas devido ao tamanho não foi possível upá-lo no Git-Hub. Logo caso haja a necessidade de alterar o código atual, será preciso  acrescentar esse executável na pasta raiz e ao finalizar (depois do deploy) removê-lo quando gerar o executável python.
 
 ![Organização dos Arquivos](https://github.com/Igor-Wolf/Utilitarios/blob/main/demostra%C3%A7%C3%A3o%20de%20organiza%C3%A7%C3%A3o.png?raw=true)
 
@@ -71,5 +71,5 @@ No que diz respeito às funcionalidades é possível dizer o seguinte:
 
 ## 🔧 Issues Fixeds
 
--  Dependendo do título do vídeo informado pode ocorrer erros no download, acredito que pode ser por motivo dos caracteres especiais
+-  Dependendo do título do vídeo informado pode ocorrer erros no download, provavelmente por motivo dos caracteres especiais
 
