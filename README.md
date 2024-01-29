@@ -1,4 +1,4 @@
-# Utilitáiros Change Log v. 0.4
+# Utilitáiros Change Log v. 0.5
 Esse projeto tem como objetivo a elaboração de um programa que possui um conjunto de funcões utilitarias com base no ffmpeg com comandos em python para manipular arquivos como mp4, mp3, wav, jpeg, png, etc, baixar arquivos do youtube dentre outras funções. Programa ainda está em desenvolvimento. Os testes e o desenvolvimento do programa foram realizados no sistema operacional windows pelo Visual Studio Code em Python. O programa não possui fins lucrativos, é apenas para uso pessoal e fins didáticos
 
 ## Sobre o desenvolvimento
@@ -16,9 +16,17 @@ pyinstaller --add-binary "ffmpeg.exe:." --onefile main.py
 
 ## O programa de Utilitários pode ser baixado abaixo
 
+- Apenas o utilitarios.exe:
 
 [Utilitários](https://github.com/Igor-Wolf/Utilitarios/tree/main/dist)
 
+Aqui apenas o utilitarios será baixado sendo necessária a obtenção do ffmpeg em sites oficiais
+
+- Programa completo para funcionamento
+
+[Utilitários Completo](https://mega.nz/folder/RfpkSJCA#M5PcUoLA2iqBGfyLODu_Wg)
+
+Para realizar o funcionamento basta baixar o arquivo em .rar e executar o utilitarios.exe
 
 ## Modo de Usar
 
@@ -35,7 +43,7 @@ No que diz respeito às funcionalidades é possível dizer o seguinte:
 
 - Download de arquivos: Aqui você conseguirá baixar tanto videos, quanto audios do youtube. É importante lembrar que o youtube organiza os arquivos de maneira diferenciada. Ele separa o que você exerga e o que você escuta em arquivos diferentes. Foram definidas três sub opções para o usuário escolher sendo elas download de videos (aplicando-se o filtro video/mp4), download de audios (aplicando-se o filtro audio/mp4), e download de arquivos diversos (que não leva em consideração filtros). Após a escolha da opção o usuário deverá indicar qual itag deseja baixar, para videos é recomendada a 137 que possui maior qualidade, já o audio a 140.
 
-- Conversor de arquivos: Nessa opção o usuário poderá converter arquivos em outros formatos, em espeicial .mp4 em .mp3. É possivel também converter arquivos de imagens outros tipos como png - jpg ou mesmo webP - jpeg basta indicar o nome e a extensão do arquivo.
+- Conversor de arquivos: Nessa opção o usuário poderá converter arquivos em outros formatos, em espeicial .mp4 em .mp3. É possivel também converter arquivos de imagens em outros tipos como png - jpg ou mesmo webP - jpeg basta indicar o nome e a extensão do arquivo.
 
 - Edição de arquivos: É uma opção bastante rudimentar para realizar cortes em arquivos de audio e video. Nela você poderá indicar o tempo de início e final do vídeo que desejá realizar o corte
 
