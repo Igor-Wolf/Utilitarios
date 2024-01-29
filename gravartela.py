@@ -43,6 +43,8 @@ def gravar():
 
         if opcao == "1":
             nome_arquivo = input("Digite o nome do arquivo de saída (ex: video.mp4): ")
+            print("Para encerrar a gravação precione Ctrl + C")
+            input("Pressione enter para continuar...")
             iniciar_gravacao(nome_arquivo)
 
         elif opcao == "0":

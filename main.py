@@ -3,6 +3,7 @@ import os
 import conversor
 import cortar
 import gravartela
+import merge
 
 #================================================================== CABEÇALHOS
 
@@ -29,20 +30,38 @@ while True:
 [2] Conversor de arquivos
 [3] Edição de arquivos
 [4] Realizar gravação
+[5] Juntar vídeo e audio                   
 [0] Sair\n\n''')
 
 
     if auxiliar== "1":
-        download.downloadmanual()
-        limpatela()
+        try:
+            download.downloadmanual()
+            limpatela()
+        except:
+            print("Erro, operação encerrada!")
     elif auxiliar== "2":
-        conversor.convertmanual()
-        limpatela()
+        try:
+            conversor.convertmanual()
+            limpatela()
+        except:
+            print("Erro, operação encerrada!")
     elif auxiliar=="3":
-        cortar.cutvideo()
-        limpatela()
+        try:
+            cortar.cutvideo()
+            limpatela()
+        except:
+            print("Erro, operação encerrada!")
     elif auxiliar =="4":
-        gravartela.gravar()
+        try:
+            gravartela.gravar()
+        except:
+            print("Erro, operação encerrada!")
+    elif auxiliar =="5":
+        try:
+            merge.juntarvideoeaudiomanualmente()
+        except:
+            print("Erro, operação encerrada!")
     elif auxiliar=="0":
         break
     else: 

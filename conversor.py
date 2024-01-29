@@ -20,6 +20,8 @@ def converttoaudio(title):
     print("Conversão concluída!")
 
     deletarArquivo.deletar_arquivo(video_path)
+    
+
 
 
 def convertmanual():
@@ -48,7 +50,7 @@ def convertmanual():
 
         if auxiliar=="1":
             video_path = input("Digite o nome do arquivo de entrada e sua extensão como no exemplo video.mp4:    ")
-            mp3_path = input("Digite o nome do arquivo de saida e sua extensão como no exemplo audio.mp4:    ")
+            mp3_path = input("Digite o nome do arquivo de saida e sua extensão como no exemplo audio.mp3:    ")
             
             # Define a variável de ambiente FFMPEG_PATH para apontar para o diretório do executável do ffmpeg
             os.environ["FFMPEG_PATH"] = os.path.join(os.path.dirname(__file__), "ffmpeg.exe")
