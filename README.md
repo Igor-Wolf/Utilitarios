@@ -67,9 +67,9 @@ No que diz respeito às funcionalidades é possível dizer o seguinte:
 - Não foram implementados testes unitários
 - Não há restrição nos valores recebidos pelo usuário podendo gerar erros no sistema
 - Carece de uma interface gráfica
-- Dependendo do título do vídeo informado pode ocorrer erros no download, acredito que pode ser por motivo dos caracteres especiais
+
 
 ## 🔧 Issues Fixeds
 
-- 
+-  Dependendo do título do vídeo informado pode ocorrer erros no download, acredito que pode ser por motivo dos caracteres especiais
 
