@@ -34,6 +34,3 @@ def renomear_arquivo(nome_antigo, nome_novo):
         print(f"O arquivo {nome_novo} já existe.")
     except Exception as e:
         print(f"Ocorreu um erro ao renomear o arquivo: {e}")
-
-# Testando a função renomear_arquivo com um exemplo
-renomear_arquivo("arquivo_antigo.txt", "arquivo_novo.txt")
