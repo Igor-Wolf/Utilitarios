@@ -1,51 +1,46 @@
-import subprocess
-import os
+import cv2
+from vidgear.gears import ScreenGear
 
-processo_gravacao = None
+def gravar(caminho):
+    # Define o codec de vídeo e cria o objeto VideoWriter para salvar a gravação
+    output_video_filename = caminho
+    codec = cv2.VideoWriter_fourcc(*"mp4v")  # Codec de vídeo (MP4)
+    fps = 25.0  # Taxa de frames por segundo
+    resolution = (1920, 1080)  # Resolução do vídeo (largura, altura)
+    output_video = cv2.VideoWriter(output_video_filename, codec, fps, resolution)
 
-def gravar():
-  
+    # Inicializa o objeto ScreenGear para capturar a tela
+    screen_capturer = ScreenGear().start()
 
-    def iniciar_gravacao(nome_arquivo_saida):
-        global processo_gravacao
-        comando_ffmpeg = [
-            'ffmpeg',        # Executável FFmpeg
-            '-f', 'gdigrab', # Formato de entrada para capturar a tela do Windows
-            '-i', 'desktop', # Dispositivo de captura (desktop = tela inteira)
-            nome_arquivo_saida  # Nome do arquivo de saída
-        ]
-       
-        # Iniciar o processo FFmpeg em segundo plano
-        processo_gravacao = subprocess.Popen(comando_ffmpeg)
+    # Variável para verificar se a janela já foi criada
+    janela_criada = False
 
-        print("Gravação iniciada")
-
-      
-    def limpatela():
-        input("\nPressione Enter para continuar...\n\n")
-        os.system('cls')
-
-    def cb():
-        print("=" * 70)
-
-    def cb0():
-        cb()
-        print(" " * 25 + "Realizar gravações" )
-        cb()
-
+    # Loop principal para capturar e salvar os frames
     while True:
-        limpatela()
-        cb0()
-        print("\n[1] Iniciar gravação")
-        print("[0] Sair\n")
+        # Captura o próximo frame da tela
+        frame = screen_capturer.read()
 
-        opcao = input("Escolha uma opção: ")
-
-        if opcao == "1":
-            nome_arquivo = input("Digite o nome do arquivo de saída (ex: video.mp4): ")
-            print("Para encerrar a gravação precione Ctrl + C")
-            input("Pressione enter para continuar...")
-            iniciar_gravacao(nome_arquivo)
-
-        elif opcao == "0":
+        # Verifica se o frame é válido
+        if frame is None:
             break
+
+        # Verifica se a janela já foi criada
+        if not janela_criada:
+            cv2.namedWindow("Captura de Tela")
+            janela_criada = True
+
+        # Salva o frame no arquivo de vídeo
+        output_video.write(frame)
+
+        # Exibe o frame
+        cv2.imshow("Captura de Tela", frame)
+
+        # Verifica se a tecla 'q' foi pressionada para sair do loop
+        if cv2.waitKey(1) & 0xFF in [ord('q'), ord('Q')]:
+            break
+
+    # Libera recursos
+    cv2.destroyAllWindows()
+    screen_capturer.stop()
+    output_video.release()
+

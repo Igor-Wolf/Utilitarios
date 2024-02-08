@@ -1,35 +1,23 @@
-import ffmpeg
+import subprocess
 import os
 
 
-def cutvideo():
-    
-    def limpatela():
-        input("\nPressione qualquer tecla para continuar...\n\n")
-        os.system('cls')
+def cutvideo(caminho1, caminho2, tempo1, tempo2):
+    start_time = tempo1 
+    end_time = tempo2
 
-    def cb():
-        print("=" * 70)
+    nome = caminho1
+    saida = caminho2
 
-    def cb0():
-        cb()
-        print(" " * 25 + "Edição de Arquivos" )
-        cb()
+    # Define o comando ffmpeg com os parâmetros desejados
+    ffmpeg_command = [
+        "ffmpeg",
+        "-ss", str(start_time),  # Tempo de início
+        "-to", str(end_time),    # Tempo de fim
+        "-i", nome,              # Arquivo de entrada
+        "-c", "copy",            # Copiar os streams de áudio e vídeo sem re-encode
+        saida                    # Arquivo de saída
+    ]
 
-    limpatela()
-    cb0()
-
-    start_time = input('Digite o começo do video/audio como no exemplo HH:MM:SS para realizar o corte:    ') 
-    end_time = input('Digite o final do video/audio como no exemplo HH:MM:SS para realizar o corte:    ') 
-
-    nome = input("Digite o nome do arquivo de entrada e sua extenção como no exemplo video.mp4:    ")
-    saida = input("Digite o nome do arquivo de saida e sua extenção como no exemplo video.mp4:    ")
-
-    # Define a variável de ambiente FFMPEG_PATH para apontar para o diretório do executável do ffmpeg
-    os.environ["FFMPEG_PATH"] = os.path.join(os.path.dirname(__file__), "ffmpeg.exe")
-
-    (
-        ffmpeg.input(nome, ss=start_time, to=end_time)
-        .output(saida)
-        .run()
-    )
+    # Executa o comando ffmpeg de forma silenciosa
+    subprocess.run(ffmpeg_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

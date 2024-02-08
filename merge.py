@@ -1,26 +1,27 @@
-import ffmpeg
+import subprocess
+import os
 import deletarArquivo
 import verificador
-import os
 
-
-def juntarvideoeaudio(title,nome):
-    video_path = f"{title}.mp4"
-    mp3_path = f"{title}.mp3"
-    final_path = f"{nome}1.mp4"
+def juntarvideoeaudio(title, nome, caminho):
+    video_path = f"temp/{title}.mp4"
+    mp3_path = f"temp/{title}.mp3"
+    final_path = caminho
 
     verificador.verificacao2(video_path, mp3_path)
-    
-    # Define a variável de ambiente FFMPEG_PATH para apontar para o diretório do executável do ffmpeg
-    os.environ["FFMPEG_PATH"] = os.path.join(os.path.dirname(__file__), "ffmpeg.exe")
 
-    video = ffmpeg.input(video_path)
-    audio = ffmpeg.input(mp3_path)
-    
-    (
-        ffmpeg.output(video, audio, final_path, vcodec='copy', acodec='aac', strict='experimental')
-        .run()  # Agora o módulo ffmpeg irá procurar o executável no diretório especificado pela variável de ambiente FFMPEG_PATH
-    )
+    ffmpeg_command = [
+        "ffmpeg",
+        "-i", video_path,            # Arquivo de vídeo
+        "-i", mp3_path,              # Arquivo de áudio
+        "-c:v", "copy",              # Codec de vídeo (copiar sem re-encode)
+        "-c:a", "aac",               # Codec de áudio (AAC)
+        "-strict", "experimental",   # Opção para permitir codecs experimentais
+        final_path                  # Arquivo de saída
+    ]
+
+    # Executa o comando ffmpeg de forma silenciosa
+    subprocess.run(ffmpeg_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     print("Conversão concluída!")
 
@@ -28,40 +29,23 @@ def juntarvideoeaudio(title,nome):
     deletarArquivo.deletar_arquivo(video_path)
 
 
-
-def juntarvideoeaudiomanualmente():
-    
-    def limpatela():
-        input("\nPressione qualquer tecla para continuar...\n\n")
-        os.system('cls')
-
-    def cb():
-        print("=" * 70)
-
-    def cb0():
-        cb()
-        print(" " * 25 + "Junção de Arquivos" )
-        cb()
-    
-    
-    limpatela()
-    cb0()
-    
-    video_path = input("Digite o nome do arquivo de video que deseja juntar e suas extensão (video.mp4):    ")
-    mp3_path = input("Digite o nome do arquive de audio que deseja juntar como no exemplo (audio.mp3):    ")
-    final_path = input("Digite o nome do arquivo de saída e sua extensão como no exemplo (video1.mp4):    ")
+def juntarvideoeaudiomanualmente(caminho1, caminho2, caminho3):
+    video_path = caminho1
+    mp3_path = caminho2
+    final_path = caminho3
 
     verificador.verificacao3(video_path, mp3_path)
-    
-    # Define a variável de ambiente FFMPEG_PATH para apontar para o diretório do executável do ffmpeg
-    os.environ["FFMPEG_PATH"] = os.path.join(os.path.dirname(__file__), "ffmpeg.exe")
 
-    video = ffmpeg.input(video_path)
-    audio = ffmpeg.input(mp3_path)
-    
-    (
-        ffmpeg.output(video, audio, final_path, vcodec='copy', acodec='aac', strict='experimental')
-        .run()  # Agora o módulo ffmpeg irá procurar o executável no diretório especificado pela variável de ambiente FFMPEG_PATH
-    )
+    ffmpeg_command = [
+        "ffmpeg",
+        "-i", video_path,            # Arquivo de vídeo
+        "-i", mp3_path,              # Arquivo de áudio
+        "-c:v", "copy",              # Codec de vídeo (copiar sem re-encode)
+        "-c:a", "aac",               # Codec de áudio (AAC)
+        "-strict", "experimental",   # Opção para permitir codecs experimentais
+        final_path                  # Arquivo de saída
+    ]
 
-    print("Junção concluída!")
+    # Executa o comando ffmpeg de forma silenciosa
+    subprocess.run(ffmpeg_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+

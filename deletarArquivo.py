@@ -10,9 +10,11 @@ def deletar_arquivo(nome_arquivo):
     print(caminho_arquivo)
     try:
         os.remove(caminho_arquivo)
-        print(f"Arquivo {nome_arquivo} deletado com sucesso.")
+        #print(f"Arquivo {nome_arquivo} deletado com sucesso.")
     except FileNotFoundError:
-        print(f"O arquivo {nome_arquivo} não foi encontrado em {caminho_arquivo}.")
+        #print(f"O arquivo {nome_arquivo} não foi encontrado em {caminho_arquivo}.")
+        pass
     except Exception as e:
-        print(f"Ocorreu um erro ao deletar o arquivo: {e}")
+        #print(f"Ocorreu um erro ao deletar o arquivo: {e}")
+        pass
 

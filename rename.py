@@ -26,11 +26,14 @@ def renomear_arquivo(nome_antigo, nome_novo):
         caminho_novo = os.path.join(diretorio_executavel, nome_novo)
         
         os.rename(caminho_antigo, caminho_novo)
-        print(f"Arquivo renomeado de {nome_antigo} para {nome_novo} com sucesso.")
+        #print(f"Arquivo renomeado de {nome_antigo} para {nome_novo} com sucesso.")
     except FileNotFoundError:
-        print(f"O arquivo {nome_antigo} não foi encontrado.")
-        print(caminho_antigo)
+        pass
+        #print(f"O arquivo {nome_antigo} não foi encontrado.")
+        #print(caminho_antigo)
     except FileExistsError:
-        print(f"O arquivo {nome_novo} já existe.")
+        pass
+        #print(f"O arquivo {nome_novo} já existe.")
     except Exception as e:
-        print(f"Ocorreu um erro ao renomear o arquivo: {e}")
+        pass
+        #print(f"Ocorreu um erro ao renomear o arquivo: {e}")
