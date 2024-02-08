@@ -7,7 +7,7 @@ Atualmente foram utilizadas diversas biliotecas do python como ffmpeg, pythube, 
 Não alterei códigos do ffmpeg apenas agreguei numa linguagem mais agradável para o usuário final poder realizar suas tarefas.
 Para futuras alterações no código, houve a tentativa de acessar o ffmpeg pelo executavel ffmpeg.exe contido na raiz do código, mas devido ao tamanho não foi possível upá-lo no Git-Hub. Logo caso haja a necessidade de alterar o código atual, será preciso  acrescentar esse executável na pasta raiz e ao finalizar (depois do deploy) removê-lo quando gerar o executável python.
 
-![Organização dos Arquivos](https://github.com/Igor-Wolf/Utilitarios/blob/main/demostra%C3%A7%C3%A3o%20de%20organiza%C3%A7%C3%A3o.png?raw=true)
+![Organização dos Arquivos](https://github.com/Igor-Wolf/Utilitarios/blob/TERMINAL/demostra%C3%A7%C3%A3o%20de%20organiza%C3%A7%C3%A3o.png?raw=true)
 
 Para gerar o executável foi utilizada a biblioteca pyinstaller referenciando ao executável do ffmpeg que deverá estar na mesma raiz que o executável do Utilitários
 
@@ -32,11 +32,11 @@ Para realizar o funcionamento basta baixar o arquivo em .rar e executar o utilit
 
 Para poder utilizar o programa é necessário ter tanto o utilitarios.exe quanto o ffmpeg.exe na mesma pasta
 
-![Executavel](https://github.com/Igor-Wolf/Utilitarios/blob/main/Execut%C3%A1vel.png?raw=true)
+![Executavel](https://github.com/Igor-Wolf/Utilitarios/blob/TERMINAL/Execut%C3%A1vel.png?raw=true)
 
 Feito isso agora já será possivel realizar todas as operações que ele proporciona
 
-![Tela de Início](https://github.com/Igor-Wolf/Utilitarios/blob/main/tela%20de%20inicio.png?raw=true)
+![Tela de Início](https://github.com/Igor-Wolf/Utilitarios/blob/TERMINAL/tela%20de%20inicio.png?raw=true)
 
 Todas as operações feitas criarão arquivos na mesma raiz onde se encontram tanto o utilitarios.exe quanto ffmpeg.exe. Logo se escolher a função download de arquivos, por exemplo, o video.mp4 será criado nessa pasta.
 No que diz respeito às funcionalidades é possível dizer o seguinte:
