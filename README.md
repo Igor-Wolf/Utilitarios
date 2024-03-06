@@ -1,4 +1,4 @@
-# Utilitáiros GUI (Graphic User Interface) Change Log v. 0.5
+# Utilitáiros GUI (Graphical User Interface) Change Log v. 0.5
 Esse projeto tem como objetivo a elaboração de um programa que possui um conjunto de funcões utilitarias com base no ffmpeg com comandos em python para manipular arquivos como mp4, mp3, wav, jpeg, png, etc, baixar arquivos do youtube dentre outras funções. Programa ainda está em desenvolvimento. Os testes e o desenvolvimento do programa foram realizados no sistema operacional windows pelo Visual Studio Code em Python. O programa não possui fins lucrativos, é apenas para uso pessoal e fins didáticos
 
 ## Sobre o desenvolvimento
