@@ -20,13 +20,14 @@ pyinstaller.exe --onefile --windowed --icon=favicon.ico main.py
 
 - Programa completo para funcionamento
 
-[Utilitários Completo](https://mega.nz/file/Qa4RjZJC#v6mU-_wMq_Wblkq5cPwxMTs_32CrolWVsNf4HaTxRVI)
+[Utilitários Completo](https://mega.nz/file/wLJ13RDJ#1OelFMnbu-beANzY7wFrjUQ1gkeW-FiD9VVGHH6fSjE)
 
 Para realizar o funcionamento basta baixar o arquivo e executar o instalador
 
 ## Modo de Usar
 
 Realizada a instalação através do instalador já será possivel realizar todas as operações que o programa proporciona
+Execute o arquivo em MODO ADMINISTRADOR para evitar erros de permissões.
 
 ![Tela de Início](https://github.com/Igor-Wolf/Utilitarios/blob/GUI/programa%20rodando.png?raw=true)
 
