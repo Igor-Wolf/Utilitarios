@@ -1,4 +1,4 @@
-from pytube import YouTube
+from pytubefix import YouTube
 from PyQt6 import QtWidgets, QtGui, QtCore
 
 import requests
